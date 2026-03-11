@@ -44,9 +44,9 @@ Disclaimer:
 Voldemort ID Disruptor 
 
 "He said softly, 'Voldemort... is my past, present, and future, Harry Potter...'"
-He waved Harry's wand in the air, and the letters rearranged themselves into: **I AM LORD VOLDEMORT**.
+He waved Harry's wand in the air, and the letters rearranged themselves into: ‘I AM LORD VOLDEMORT’.
 
-In today's highly connected digital world, experts advise against using similar IDs across different social media platforms. Inspired by the *Harry Potter* series, the **Voldemort ID Disruptor** is a lightweight ID obfuscation and generation tool. 
+In today's highly connected digital world, experts advise against using similar IDs across different social media platforms. Inspired by the *Harry Potter* series, the 'Voldemort ID Disruptor' is a lightweight ID obfuscation and generation tool. 
 
 It generates high-randomness variants of strings using various character manipulation logic, including case swapping, custom mapping (e.g., 'm' to 'nn'), numeric conversion, and salt addition. This project is intended for simple character obfuscation and educational purposes. 
 
