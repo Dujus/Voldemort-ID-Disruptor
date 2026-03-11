@@ -1,4 +1,5 @@
 Voldemort ID Disruptor 
+
 ”他轻声说：“伏地魔……是我的过去、现在和未来，哈利·波特……”
 他举起哈利的魔杖，在空中挥了一下，那些字母重新排列，变成了：我是伏地魔（I AM LORD VOLDEMORT）。“
 在社交媒体高度发达的今天，专家们劝我们不要在不同的社交媒体平台使用相似的ID。受《哈利波特》系列故事的启发，我的Voldemort ID Disruptor 是一个轻量级的 简单ID 混淆与生成工具。它旨在通过多种字符处理逻辑（包括大小写切换、自定义映射（m-nn)、数字转化及盐值添加），为字符串生成具有高随机性的变体。该项目特别适用于简单混淆对象字符及进行兴趣教学场景。目前，它适配英文ID。纯中文ID可以运行，但效果不佳，仍在研究中。
@@ -6,7 +7,7 @@ Voldemort ID Disruptor
 pip install -r requirements.txt
 使用时，您可以在‘config.json'中自定义您的映射，在main.py中，s的值即为您所希望混淆的ID。它将以字符串格式输入。运行 python main.py ，按照屏幕提示输入是否应用特定功能后，得到5个相应打乱后ID。
 一次执行案例如下：
-“原码为IamLordVoldemort
+原码为IamLordVoldemort
 是否选择大小写切换（1为使用，其他输入默认为不使用）:1
 是否选择我的自定义映射，如m映射为nn，(1为使用，其他输入默认为不使用):1
 是否选择字符映射为数字(1为使用，其他输入默认为不使用):1
@@ -16,7 +17,7 @@ pip install -r requirements.txt
 我们看到了一个字典输出，其中生成了5个结果及其与原码的各自levenshtein距离（即前者到达后者所需做的变换次数）
 {0: {'DLOTOR18vMOERDAM': 13}, 1: {'1LORMDREOvMAOTD8': 14}, 2: {'DLTRMEOA1R8vMOOD': 14}, 3: {'OR8DAvLMRDE1TOOM': 13}, 4: {'1RMOM8TOLAOEDvRD': 11}}
 
-”
+
 Disclaimer:
 本项目仅供学术研究、兴趣爱好、个人学习及简单的安全测试使用。
 
