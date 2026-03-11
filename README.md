@@ -9,12 +9,18 @@ Voldemort ID Disruptor
 pip install -r requirements.txt
 使用时，您可以在‘config.json'中自定义您的映射，在main.py中，s的值即为您所希望混淆的ID。它将以字符串格式输入。运行 python main.py ，按照屏幕提示输入是否应用特定功能后，得到5个相应打乱后ID。 
 结构为：VoldemortProject/
-├── main.py              # 入口文件
+├── main.py        # 入口文件
+
 ├── RiddleCore.py        # 核心模块，包含 Voldemort 类及算法
+
 ├── utils.py             # 工具模块，含简单辅助函数
+
 ├── config.json          # 配置文件：存储我自定义的映射规则
+
 ├── requirements.txt     # 依赖列表
+
 └── README.md            
+
 而 Voldmort.py则是我最初创建该项目未进行拆分时的脚本文件，它也可以单独运行。
 
 一次执行案例如下：
