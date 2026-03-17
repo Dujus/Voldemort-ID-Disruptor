@@ -80,7 +80,7 @@ Run the program:
 
 Bash
 python main.py
-'v' in the main.py is the ID you hope to input it.It is a string. 
+'s' in the main.py is the ID you hope to input it.It is a string. 
 Follow the on-screen prompts to apply specific transformation functions（input number '1' means applying the function.While all other inputs means not applying it). The tool will output 5 distinct, obfuscated variants along with their Levenshtein distance relative to the original ID.
 VoldemortProject/
 ├── main.py              # Entry point
