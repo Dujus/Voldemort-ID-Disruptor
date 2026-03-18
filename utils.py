@@ -1,4 +1,4 @@
-import pypinyin # 大饼：将来加入中文转拼音逻辑
+from pypinyin import lazy_pinyin# 大饼：将来加入中文转拼音逻辑（已实现）
 
 
 def swapcase(s):
@@ -23,6 +23,12 @@ def word_break(s, break_dict):
             words[i] = break_dict.get(words[i])
         i += 1
     return "".join(words)
+
+def Chi_to_Rom(s):
+
+  Eng_list = lazy_pinyin(s)
+
+  return "".join(Eng_list)
 
 
 

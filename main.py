@@ -2,16 +2,18 @@ from RiddleCore import Voldemort
 import json
 import time
 import random
-from utils import swapcase, word_break
+from utils import swapcase, word_break , Chi_to_Rom
 import Levenshtein # 计算距离用
 def main():
     with open('config.json','r') as d: # r是只读
         config = json.load(d) #对 json中的映射字典进行转换
 
     v = Voldemort(config['break_dict'])
-    s = 'IamLordVoldemort'
+    s = '奥斯瓦尔德W'
     print(f'原码为{s}')
-
+    if input('是否选择汉语切换（请输入0(不使用）或1（使用），其他输入默认为不使用）：').strip() == '1':
+        s = Chi_to_Rom(s)
+        print('汉语切换后汉语字符转为小写英文，因此不推荐大小写切换')
     if input('是否选择大小写切换（1为使用，其他输入默认为不使用）（Do you want swapcase?1 for yes, other for no):').strip() == '1':
         s = swapcase(s)  # swapcase函数已经被移动到utils当中
     if input('是否选择我的自定义映射，如m映射为nn，(1为使用，其他输入默认为不使用)(（Do you want my Customized Mapping?1 for yes, other for no):').strip() == '1':
