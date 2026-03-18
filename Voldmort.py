@@ -1,9 +1,8 @@
 import random
 import typing
 import time
-import pypinyin # 大饼：将来加入中文转拼音逻辑
+from pypinyin import lazy_pinyin# 大饼：将来加入中文转拼音逻辑（已实现）
 import Levenshtein # 计算两个ID的距离用
-
 
 class Voldemort(object):
 
@@ -20,6 +19,10 @@ class Voldemort(object):
         :return:
         """
         return self.reverse_dict.get(random.randint(0 , 25)) # 生成一个随机int数,得到一个随机字符.目前加盐还只从字符中选取。今后可能扩大范围或者加入多个盐
+
+    def Chi_to_Eng(self,s):
+        Eng_list = lazy_pinyin(s)
+        return "".join(Eng_list)
 
     def word_to_num(self, s, n):
         """
@@ -76,6 +79,10 @@ class Voldemort(object):
         :return:
         """
         print( f'原码为{s}')
+        Eng_choice = input('是否选择汉语切换（请输入0(不使用）或1（使用），其他输入默认为不使用）：').strip()
+        if Eng_choice == 1:
+            s = self.Chi_to_Eng(s)
+            print('汉语切换后汉语字符转为小写英文，因此不推荐大小写切换')
         swapcase_choice = input('是否选择大小写切换（请输入0(不使用）或1（使用），其他输入默认为不使用）：').strip() # strip用于删除空格
         if swapcase_choice == '1': # 其他输入则均不使用
             s = self.swapcase(s)
@@ -119,5 +126,5 @@ class Voldemort(object):
 
 
 v = Voldemort()
-s = 'IamLordVoldemort'
+s = 'IamTomRiddle'
 print(v.disrupt_spell(s))
