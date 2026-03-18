@@ -3,7 +3,7 @@ Voldemort ID Disruptor
 ”他轻声说：“伏地魔……是我的过去、现在和未来，哈利·波特……”
 他举起哈利的魔杖，在空中挥了一下，那些字母重新排列，变成了：我是伏地魔（I AM LORD VOLDEMORT）。”
 
-在社交媒体高度发达的今天，专家们劝我们不要在不同的社交媒体平台使用相似的ID。受《哈利波特》系列故事的启发，我的Voldemort ID Disruptor 是一个轻量级的 简单ID 混淆与生成工具。它旨在通过多种字符处理逻辑（包括大小写切换、自定义映射（m-nn)、数字转化及盐值添加），为字符串生成具有高随机性的变体。特别适用于简单混淆对象字符及进行兴趣教学场景。目前，它适配英文ID。纯中文ID可以运行，但效果不佳，仍在研究中。
+在社交媒体高度发达的今天，专家劝我们不要在不同的社交媒体平台使用相似ID。受《哈利波特》系列启发，Voldemort ID Disruptor 是一个轻量级的 简单ID 混淆与生成工具。它旨在通过多种字符处理逻辑（包括大小写切换、自定义映射（m-nn)、数字转化及盐值添加），为字符串生成具有高随机性的变体。适用于简单混淆对象字符及进行兴趣教学场景。目前，它理论适配中英文ID。
 
 它基于python 实现，依赖库如下：
 pip install -r requirements.txt
@@ -25,6 +25,7 @@ Voldmort.py则是我最初创建该项目未进行拆分时的脚本文件，它
 
 一次执行案例如下：
 原码为IamLordVoldemort
+是否选择汉语切换（请输入0(不使用）或1（使用），其他输入默认为不使用）：0
 
 是否选择大小写切换（1为使用，其他输入默认为不使用）:1
 
@@ -42,17 +43,33 @@ Voldmort.py则是我最初创建该项目未进行拆分时的脚本文件，它
 
 {0: {'DLOTOR18vMOERDAM': 13}, 1: {'1LORMDREOvMAOTD8': 14}, 2: {'DLTRMEOA1R8vMOOD': 14}, 3: {'OR8DAvLMRDE1TOOM': 13}, 4: {'1RMOM8TOLAOEDvRD': 11}}
 
+<details>
 
-
+原码为奥斯瓦尔德W
+是否选择汉语切换（请输入0(不使用）或1（使用），其他输入默认为不使用）：1
+汉语切换后汉语字符转为小写英文，因此不推荐大小写切换
+是否选择大小写切换（1为使用，其他输入默认为不使用）（Do you want swapcase?1 for yes, other for no):1
+是否选择我的自定义映射，如m映射为nn，(1为使用，其他输入默认为不使用)(（Do you want my Customized Mapping?1 for yes, other for no):1
+是否选择字符映射为数字(1为使用，其他输入默认为不使用)(Do you want some character to words?):1
+目前码长为12
+请输入转化字符数目（前n个将被转化为数字）(numbers of characters transferred )，请输入一个大于0但小于原码长度的正整数，其他输入将跳过该功能:1
+是否加入随机字母盐值(Do you want adding salt?(1为使用，其他输入默认为不使用):1
+我们看到了一个字典输出，其中生成了5个结果及其与原码的各自levenshtein距离（即前者到达后者所需做的变换次数）
+{0: {'EIADRuuOWgSAE': 12}, 1: {'uuOWIgRAADESE': 10}, 2: {'uIRSOEWEuAADg': 11}, 3: {'OEDSEWIguAARu': 11}, 4: {'gOAuRSEuDEAIW': 9}}
+ </details> 
 Disclaimer:
 本项目仅供学术研究、兴趣爱好、个人学习及简单的安全测试使用。
 
 严禁滥用：严禁将本项目用于任何形式的自动化注册、批量生成虚假 ID、垃圾邮件制造、网络暴力、网络攻击或其他违反目标平台服务条款及相关法律法规的行为！！！
 
-责任归属：采用 GNU General Public License v3.0协议。使用者应对使用本项目产生的任何后果承担全部责任，开发者不对因滥用本项目而导致的任何法律诉讼、经济损失或服务违规负责。本代码的混淆效果简单，不适合应用于严肃的、工业化的、真正的’加密‘场景。且请注意，该项目的‘原ID到结果ID’是单向的，用后不依赖统计工具仅凭肉眼难以还原，在破坏前最好记住原ID。
+责任归属：采用 GNU General Public License v3.0协议。使用者应对使用本项目产生的任何后果承担全部责任，开发者不对因滥用本项目而导致的任何法律诉讼、经济损失或服务违规负责。本代码的混淆效果简单，不适合应用于严肃的、工业化的、真正的’加密‘场景。且请注意，该项目‘原ID到结果ID’是单向的，用后不依赖工具仅凭肉眼难以还原，在破坏前最好记住原ID。
 
 本代码是我作为python菜鸟上传的第一个兴趣项目，经验不足，一定还有很多疏漏、粗糙、不足之处，恳请各位大佬多多批评指正。若有不当，请轻喷。
-未来的’大饼‘计划：适配中文（映射为拼音）、自动化该项目（如移除input交互）、用户自定义自由度提升（如自己定义生成几个ID）、更精细的函数功能等等，敬请期待……
+未来的’大饼‘计划：适配中文（映射为拼音，已经实现）、自动化该项目（如移除input交互）、用户自定义自由度提升（如自己定义生成几个ID）、更精细的函数功能等等，敬请期待……
+<details>
+ <summary>更新：目前已通过lazy_pinyin 加入了将中文映射为小写字符的逻辑！</summary> 
+ 但这样似乎会导致子字符过长。并且全部转化也了无趣味。我想到，应用谐音（汉语转拼音再挑选汉字）会不会更好些？但没有现成库可供使用，研究中……
+ </details>
 非常欢迎各位开发者提交 Issue 或 Pull Request，共同完善项目。您的建议是我进步的动力！
 
 Voldemort ID Disruptor 
@@ -78,7 +95,6 @@ Customize your mapping rules in config.json.
 
 Run the program:
 
-Bash
 python main.py
 's' in the main.py is the ID you hope to input it.It is a string. 
 Follow the on-screen prompts to apply specific transformation functions（input number '1' means applying the function.While all other inputs means not applying it). The tool will output 5 distinct, obfuscated variants along with their Levenshtein distance relative to the original ID.
@@ -102,7 +118,7 @@ About
 This is my first hobby project as a Python learner. There are certainly areas for improvement, and I welcome all constructive criticism and feedback.
 Future Roadmap(perhaps):
 
-Support for Chinese character mapping (Pinyin).
+Support for Chinese character mapping (Pinyin)(already achieved).
 
 Automation (e.g., removing input() interactions).
 
