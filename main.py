@@ -2,14 +2,16 @@ from RiddleCore import Voldemort
 import json
 import time
 import random
-from utils import swapcase, word_break , Chi_to_Rom
+from utils import swapcase, word_break , Chi_to_Rom,save
 import Levenshtein # 计算距离用
 def main():
     with open('config.json','r') as d: # r是只读
         config = json.load(d) #对 json中的映射字典进行转换
+        result_count = config.get('result_count', 5) # v 1.0.2更新：可以在config中调整输出几个结果
 
     v = Voldemort(config['break_dict'])
     s = '奥斯瓦尔德W'
+    copy_s = s
     print(f'原码为{s}')
     if input('是否选择汉语切换（请输入0(不使用）或1（使用），其他输入默认为不使用）：').strip() == '1':
         s = Chi_to_Rom(s)
@@ -27,13 +29,15 @@ def main():
     if input('是否加入随机字母盐值(Do you want adding salt?(1为使用，其他输入默认为不使用):').strip() == '1':
         s += v.make_salt()
         leng += 1
+
     result_list = {}
     time.sleep(random.uniform(1, 2))  # uniform生成均匀分布浮点数。请原谅 我想通过sleep避免水军盗刷（水军应该不会用我这么粗劣的代码生成假ID吧)
-    for result_num in range(5): #这里我更新了逻辑
+    for result_num in range(result_count): #这里我更新了逻辑
         new_v = v.disrupt_spell(s,leng)
         result_list[result_num] = {new_v: Levenshtein.distance(new_v,s)}
-    print('我们看到了一个字典输出，其中生成了5个结果及其与原码的各自levenshtein距离（即前者到达后者所需做的变换次数）')
+    print(f'我们看到了一个字典输出，其中生成了{result_count}个结果及其与原码的各自levenshtein距离（即前者到达后者所需做的变换次数）')
     print(result_list)
-
+    if input('是否想要保存到txt(Do you want your result in txt)?:').strip() == '1':
+        save(result_list,copy_s)
 if __name__== "__main__":
     main()

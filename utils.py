@@ -31,4 +31,16 @@ def Chi_to_Rom(s):
   return "".join(Eng_list)
 
 
+def save(r, s):
+    try:
+        with open('result.txt', 'w', encoding='utf-8') as f:
+            f.write("这是处理结果：\n")
+            f.write(f"原ID为：{s}\n")
+            for idx, data in r.items():
+                f.write(f"ID:{data}\n")
+            print("成功录入result.txt！")
+    except Exception as e:
+        print(f"录入不成功:{e}")
+
+
 
