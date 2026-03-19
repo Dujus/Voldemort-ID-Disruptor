@@ -1,13 +1,13 @@
 Voldemort ID Disruptor 
-
+<details> 
 ”他轻声说：“伏地魔……是我的过去、现在和未来，哈利·波特……”
 他举起哈利的魔杖，在空中挥了一下，那些字母重新排列，变成了：我是伏地魔（I AM LORD VOLDEMORT）。”
+<\ndetails> 
+在社交媒体高度发达的今天，专家劝我们不要在不同的社交媒体平台使用相似的ID。受《哈利波特》系列的启发，Voldemort ID Disruptor 是一个轻量级的 简单ID 混淆与生成工具。它旨在通过多种字符处理逻辑（包括大小写切换、自定义映射（m-nn)、数字转化及盐值添加），为字符串生成具有高随机性的变体。特别适用于简单混淆对象字符及进行兴趣教学场景。目前，它适配中英文ID。
 
-在社交媒体高度发达的今天，专家们劝我们不要在不同的社交媒体平台使用相似的ID。受《哈利波特》系列故事的启发，我的Voldemort ID Disruptor 是一个轻量级的 简单ID 混淆与生成工具。它旨在通过多种字符处理逻辑（包括大小写切换、自定义映射（m-nn)、数字转化及盐值添加），为字符串生成具有高随机性的变体。特别适用于简单混淆对象字符及进行兴趣教学场景。目前，它适配中英文ID。
-
-它基于python 实现，依赖库如下：
+基于python 实现，依赖库如下：
 pip install -r requirements.txt
-使用时，您可以在‘config.json'中自定义您的映射，在main.py中，s的值即为您所希望混淆的ID。它将以字符串格式输入。result_count为生成结果数目。运行 python main.py ，按照屏幕提示输入是否应用特定功能后，得到5个相应打乱后ID。 
+使用时，您可以在‘config.json'中自定义您的映射，在main.py中，s的值即为您所希望混淆的ID。它将以字符串格式输入。result_count为生成结果数目。运行 python main.py ，按照屏幕提示输入是否应用特定功能后，得到要求个数相应打乱后ID。 
 结构为：VoldemortProject/
 ├── main.py        # 入口文件
 
@@ -70,7 +70,8 @@ Disclaimer:
 责任归属：采用 GNU General Public License v3.0协议。使用者应对使用本项目产生的任何后果承担全部责任，开发者不对因滥用本项目而导致的任何法律诉讼、经济损失或服务违规负责。本代码的混淆效果简单，不适合应用于严肃的、工业化的、真正的’加密‘场景。且请注意，该项目的‘原ID到结果ID’是单向的，用后不依赖统计工具仅凭肉眼难以还原，在破坏前最好记住原ID。
 
 本代码是我作为python菜鸟上传的第一个兴趣项目，经验不足，一定还有很多疏漏、粗糙、不足之处，恳请各位大佬多多批评指正。若有不当，请轻喷。
-未来的’大饼‘计划：适配中文（映射为拼音,已实现）、自动化项目（如移除input交互）、用户自定义自由度提升（如自己定义生成几个ID，已实现）、更精细函数功能等等，敬请期待……
+最近clones增多，似乎是爬虫的功劳。若您是受益于项目的人且感兴趣它未来进展，请点一个watch或star吧，这对我很重要！😙
+未来’大饼‘计划：适配中文（映射为拼音,已实现）、自动化项目（如移除input交互）、用户自定义自由度提升（如自己定义生成几个ID，已实现）、更精细函数功能等等，敬请期待……
 非常欢迎各位开发者提交 Issue 或 Pull Request，共同完善项目。您的建议是我进步的动力！
 
 Voldemort ID Disruptor 
@@ -128,3 +129,4 @@ Advanced user-defined configurations.
 
 Code refactoring and function optimization.
 Contributions are highly welcome! Feel free to submit an Issue or a Pull Request. 
+Recently, there has been an increase in clones, which seems to be attributed to crawlers. If you are someone who benefits from my early project and is interested in its future progress, please click on a watch or star, it is important to me! 😙
