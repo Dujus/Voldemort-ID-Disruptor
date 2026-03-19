@@ -43,6 +43,19 @@ Voldmort.py则是我最初创建该项目未进行拆分时的脚本文件，它
 {0: {'DLOTOR18vMOERDAM': 13}, 1: {'1LORMDREOvMAOTD8': 14}, 2: {'DLTRMEOA1R8vMOOD': 14}, 3: {'OR8DAvLMRDE1TOOM': 13}, 4: {'1RMOM8TOLAOEDvRD': 11}}
 
 
+<details> 
+原码为IamTomRiddle
+是否选择汉语切换（请输入0(不使用）或1（使用），其他输入默认为不使用）：
+是否选择大小写切换（请输入0(不使用）或1（使用），其他输入默认为不使用）：
+是否选择我采用的自定义映射，如将m映射为n（请输入0(不使用）或1（使用），其他输入默认为不使用）：
+是否选择字符映射为数字，（请输入0(不使用）或1（使用），其他输入默认为不使用）：
+现在码长为12
+是否加入盐值（请输入0(不使用）或1（使用），其他输入默认为不使用）：
+是否将结果保存到txt文件（请输入0或1）：1
+成功录入result.txt！
+我们看到了一个字典输出，其中生成了6个结果及其与原码的各自levenshtein距离（即前者到达后者所需做的变换次数）
+{0: {'edlodmRimaTI': 9}, 1: {'edoRimIalmTd': 11}, 2: {'TddemomIaRil': 10}, 3: {'RTemdIolmaid': 10}, 4: {'edImamdoiTlR': 9}, 5: {'loTmemddaIRi': 10}}
+<details> 
 
 Disclaimer:
 本项目仅供学术研究、兴趣爱好、个人学习及简单的安全测试使用。
@@ -52,7 +65,7 @@ Disclaimer:
 责任归属：采用 GNU General Public License v3.0协议。使用者应对使用本项目产生的任何后果承担全部责任，开发者不对因滥用本项目而导致的任何法律诉讼、经济损失或服务违规负责。本代码的混淆效果简单，不适合应用于严肃的、工业化的、真正的’加密‘场景。且请注意，该项目的‘原ID到结果ID’是单向的，用后不依赖统计工具仅凭肉眼难以还原，在破坏前最好记住原ID。
 
 本代码是我作为python菜鸟上传的第一个兴趣项目，经验不足，一定还有很多疏漏、粗糙、不足之处，恳请各位大佬多多批评指正。若有不当，请轻喷。
-未来的’大饼‘计划：适配中文（映射为拼音）、自动化该项目（如移除input交互）、用户自定义自由度提升（如自己定义生成几个ID）、更精细的函数功能等等，敬请期待……
+未来的’大饼‘计划：适配中文（映射为拼音,已实）、自动化项目（如移除input交互）、用户自定义自由度提升（如自己定义生成几个ID，已实现）、更精细函数功能等等，敬请期待……
 非常欢迎各位开发者提交 Issue 或 Pull Request，共同完善项目。您的建议是我进步的动力！
 
 Voldemort ID Disruptor 
@@ -102,9 +115,9 @@ About
 This is my first hobby project as a Python learner. There are certainly areas for improvement, and I welcome all constructive criticism and feedback.
 Future Roadmap(perhaps):
 
-Support for Chinese character mapping (Pinyin).
+Support for Chinese character mapping (Pinyin)(finished).
 
-Automation (e.g., removing input() interactions).
+Automation (e.g., removing input() interactions,(finished)).
 
 Advanced user-defined configurations.
 
