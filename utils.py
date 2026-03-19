@@ -18,7 +18,7 @@ def word_break(s, break_dict):
     """
     words = list(s)
     i = 0
-    while i < len(s):
+    while i < len(words):
         if words[i] in break_dict:
             words[i] = break_dict.get(words[i])
         i += 1
