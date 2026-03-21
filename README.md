@@ -132,3 +132,4 @@ Advanced user-defined configurations.
 Code refactoring and function optimization.
 Contributions are highly welcome! Feel free to submit an Issue or a Pull Request. 
 Recently, there has been an increase in clones, which seems to be attributed to crawlers. If you are someone who benefits from my early project and is interested in its future progress, please click on a watch or star, it is important to me! 😙
+![](https://yaeko-liminal-heedfully.ngrok-free.dev/pixel.png)
