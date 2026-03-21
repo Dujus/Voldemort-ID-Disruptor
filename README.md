@@ -1,8 +1,10 @@
+![访客统计](https://visitor-badge.laobi.icu/badge?page_id=Dujus.Voldemort-ID-Disruptor)
 Voldemort ID Disruptor 
 <details> 
 ”他轻声说：“伏地魔……是我的过去、现在和未来，哈利·波特……”
 他举起哈利的魔杖，在空中挥了一下，那些字母重新排列，变成了：我是伏地魔（I AM LORD VOLDEMORT）。”
 </details> 
+
 在社交媒体高度发达的今天，专家劝我们不要在不同的社交媒体平台使用相似的ID。受《哈利波特》系列的启发，Voldemort ID Disruptor 是一个轻量级的 简单ID 混淆与生成工具。它旨在通过多种字符处理逻辑（包括大小写切换、自定义映射（m-nn)、数字转化及盐值添加），为字符串生成具有高随机性的变体。特别适用于简单混淆对象字符及进行兴趣教学场景。目前，它适配中英文ID。
 
 基于python 实现，依赖库如下：
