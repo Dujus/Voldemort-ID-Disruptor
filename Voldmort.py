@@ -4,8 +4,8 @@ import typing
 import time
 from pypinyin import lazy_pinyin# 大饼：将来加入中文转拼音逻辑（已实现）
 import Levenshtein # 计算两个ID的距离
-
-
+import re
+from  Pinyin2Hanzi import simplify_pinyin ,viterbi,dag ,DefaultHmmParams
 class Voldemort(object):
 
     def __init__(self):
@@ -90,6 +90,27 @@ class Voldemort(object):
         """
         return self.word_dict, self.reverse_dict
 
+    def Chi_Homophony(self,s):
+        hmmparams = DefaultHmmParams()
+        # re.split 函数，运用unicode码，找出所有中文字符 findall(string[, pos[, endpos]])
+        chinese_list = re.findall(r'[\u4e00-\u9fa5]', s)
+        remain_part = re.split(r'[\u4e00-\u9fa5]', s)
+        remains = "".join(remain_part)
+
+        Eng_list = lazy_pinyin(chinese_list)
+        if not Eng_list:
+            print("原字符串中无中文，谐音是无效的")
+            return s
+        safe_list = []
+        for py in Eng_list:
+            safe_list.append(simplify_pinyin(py))
+        result = viterbi(hmm_params=hmmparams, observations= safe_list, path_num=300)
+        if not result:
+            print("原字符串中无中文，谐音是无效的")
+            return s
+        hom_part = "".join(result[min(len(result)-1,300)].path)  # 原库中结果对象有两类：score/path
+        refreshed_s = hom_part + remains
+        return refreshed_s
     def disrupt_spell(self, s):
         """
         s:str,原ID号
@@ -99,10 +120,12 @@ class Voldemort(object):
         config = self.read_config()
         result_count = config.get('result_count', 5)
         print( f'原码为{s}')
-        Eng_choice = input('是否选择汉语切换（请输入0(不使用）或1（使用），其他输入默认为不使用）：').strip()
-        if Eng_choice == '1':
+        Chi_choice = input('是否选择汉语切换（请输入0(不使用）、1（转换为拼音）、2（转为谐音）），其他输入默认为不使用）：').strip()
+        if Chi_choice == '1':
             s = self.Chi_to_Eng(s)
             print('汉语切换后汉语字符转为小写英文，因此不推荐大小写切换')
+        if Chi_choice == '2':
+            s = self.Chi_Homophony(s)
         swapcase_choice = input('是否选择大小写切换（请输入0(不使用）或1（使用），其他输入默认为不使用）：').strip() # strip用于删除空格
         if swapcase_choice == '1': # 其他输入则均不使用
             s = self.swapcase(s)

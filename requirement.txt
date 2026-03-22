@@ -1,6 +1,7 @@
 # 用于计算距离
 python-Levenshtein==0.26.0
 pypinyin==0.53.0
-#未来可能需要，加入适配中文的功能
+Pinyin2Hanzi
+
 
 
